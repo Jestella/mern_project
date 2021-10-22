@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://stella123:stella123@devconnector.y4gow.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://stella123:stella123@devconnector.y4gow.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken"
 }
