@@ -9,13 +9,13 @@ export const Navbar = () => {
       </h1>
       <ul>
         <li>
-          <Link to="profiles.html">Browse</Link>
+          <a href="!#">Browse</a>
         </li>
         <li>
-          <Link to="register.html">Register</Link>
+          <Link to="/register">Register</Link>
         </li>
         <li>
-          <a href="login.html">Login</a>
+          <Link to="/login">Login</Link>
         </li>
       </ul>
     </nav>
