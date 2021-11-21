@@ -1,23 +1,25 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export const Navbar = () => {
+const Navbar = () => {
   return (
-    <nav className="navbar bg-dark">
+    <nav className='navbar bg-dark'>
       <h1>
-        <Link to="/">Kmunity</Link>
+        <Link to='/'>Kmunity</Link>
       </h1>
       <ul>
         <li>
-          <a href="!#">Browse</a>
+          <a href='!#'>Browse</a>
         </li>
         <li>
-          <Link to="/register">Register</Link>
+          <Link to='/register'>Register</Link>
         </li>
         <li>
-          <Link to="/login">Login</Link>
+          <Link to='/login'>Login</Link>
         </li>
       </ul>
     </nav>
   );
 };
+
+export default Navbar;
