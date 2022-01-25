@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createProfile, getCurrentProfile } from '../../actions/profile';
@@ -10,7 +10,7 @@ const EditProfile = ({
   getCurrentProfile,
   history,
 }) => {
-  const [formData, setFromData] = useState({
+  const [formData, setFormData] = useState({
     company: '',
     website: '',
     location: '',
@@ -28,7 +28,7 @@ const EditProfile = ({
   useEffect(() => {
     if (!profile) getCurrentProfile();
     if (!loading) {
-      const profileData = { ...initialState };
+      const profileData = { ...formData };
       for (const key in profile) {
         if (key in profileData) profileData[key] = profile[key];
       }
@@ -53,7 +53,7 @@ const EditProfile = ({
   } = formData;
 
   const onChange = (e) =>
-    setFromData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -219,10 +219,10 @@ EditProfile.propTypes = {
   profile: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = (state) => {
-  profile: state.profile;
-};
+const mapStateToProps = (state) => ({
+  profile: state.profile,
+});
 
 export default connect(mapStateToProps, { createProfile, getCurrentProfile })(
-  withRouter(EditProfile)
+  Navigate(EditProfile)
 );

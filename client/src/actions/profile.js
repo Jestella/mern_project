@@ -14,7 +14,7 @@ import {
 // Get current users profile
 export const getCurrentProfile = () => async (dispatch) => {
   try {
-    await axios.get('/api/profile/me');
+    const res = await axios.get('/api/profile/me');
 
     dispatch({
       type: GET_PROFILE,
@@ -82,7 +82,7 @@ export const getGithubRepos = (username) => async (dispatch) => {
 };
 
 // Create of update profile
-export const CreateProfile =
+export const createProfile =
   (formData, history, edit = false) =>
   async (dispatch) => {
     try {
@@ -189,7 +189,7 @@ export const addEducation = (formData, history) => async (dispatch) => {
 // Delete experience
 export const deleteExperience = (id) => async (dispatch) => {
   try {
-    const rest = await axios.delete(`/api/profile/experience/${id}`);
+    const res = await axios.delete(`/api/profile/experience/${id}`);
 
     dispatch({
       type: UPDATE_PROFILE,
@@ -208,7 +208,7 @@ export const deleteExperience = (id) => async (dispatch) => {
 // Delete education
 export const deleteEducation = (id) => async (dispatch) => {
   try {
-    const rest = await axios.delete(`/api/profile/education/${id}`);
+    const res = await axios.delete(`/api/profile/education/${id}`);
 
     dispatch({
       type: UPDATE_PROFILE,
