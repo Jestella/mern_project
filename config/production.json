@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://stella123:stella123@devconnector.y4gow.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "cd49a4c7b8c1d8c67d23",
+  "githubSecret": "13c3600f95a7e54252d16f9c127611186d771cad"
+}

@@ -56,7 +56,7 @@ export const register =
     } catch (err) {
       const errors = err.response.data.errors;
 
-      if (errrors) {
+      if (errors) {
         errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
       }
       dispatch({
