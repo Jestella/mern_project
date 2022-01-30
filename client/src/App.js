@@ -42,35 +42,35 @@ const App = () => {
           <section className='container'>
             <Alert />
             <Routes>
-              <Route exact path='/' component={Landing} />
-              <Route exact path='/register' component={Register} />
-              <Route exact path='/login' component={Login} />
-              <Route exact path='/profiles' component={Profiles} />
-              <Route exact path='/profile/:id' component={Profile} />
+              <Route exact path='/' element={<Landing />} />
+              <Route exact path='/register' element={<Register />} />
+              <Route exact path='/login' element={<Login />} />
+              <Route exact path='/profiles' element={<Profiles />} />
+              <Route exact path='/profile/:id' element={<Profile />} />
 
-              <PrivateRoute exact path='/dashboard' component={Dashboard} />
+              <PrivateRoute exact path='/dashboard' element={<Dashboard />} />
               <PrivateRoute
                 exact
                 path='/create-profile'
-                component={CreateProfile}
+                element={<CreateProfile />}
               />
               <PrivateRoute
                 exact
                 path='/edit-profile'
-                component={EditProfile}
+                element={<EditProfile />}
               />
               <PrivateRoute
                 exact
                 path='/add-experience'
-                component={AddExperience}
+                element={<AddExperience />}
               />
               <PrivateRoute
                 exact
                 path='/add-edcation'
-                component={AddEducation}
+                element={<AddEducation />}
               />
-              <PrivateRoute exact path='/posts' component={Posts} />
-              <PrivateRoute exact path='/posts/:id' component={Post} />
+              <PrivateRoute exact path='/posts' element={<Posts />} />
+              <PrivateRoute exact path='/posts/:id' element={<Post />} />
             </Routes>
           </section>
         </Fragment>
